@@ -10,7 +10,7 @@ Generate a docker image based on Php 8.3.2 and Debian Bookworm
 ## Publish on Docker hub
 ```bash
 docker login -u "ityannred" docker.io && \
-docker build -t ityannred/debian12-apache-symfony7 . && \
-docker tag debian12-apache-symfony7:latest ityrannred/debian12-apache-symfony7:latest && \
-docker push ityannred/debian12-apache-symfony7:latest
+docker build -t ityannred/php83 . && \
+docker tag php83:latest ityrannred/php83:latest && \
+docker push ityannred/php83:latest
 ```

@@ -1,6 +1,6 @@
 FROM php:8.3.2-apache-bookworm
 
-ENV APACHE_DOCUMENT_ROOT /home/web
+ENV APACHE_DOCUMENT_ROOT=/home/web
 ENV TZ="Europe/Paris"
 ENV PHP_CHARSET="utf-8"
 
@@ -88,9 +88,9 @@ CMD ["/tmp/start.sh"]
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
     && sed -i -e 's/# fr_FR.UTF-8 UTF-8/fr_FR.UTF-8 UTF-8/' /etc/locale.gen \
     && locale-gen
-ENV LC_ALL fr_FR.UTF-8
-ENV LANG fr_FR.UTF-8
-ENV LANGUAGE fr_FR:fr
+ENV LC_ALL=fr_FR.UTF-8
+ENV LANG=fr_FR.UTF-8
+ENV LANGUAGE=fr_FR:fr
 
 # Python
 #ENV PYTHONUNBUFFERED=1
