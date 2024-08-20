@@ -1,0 +1,20 @@
+version: '3.5'
+services:
+  debian12-apache-symfony7:
+    container_name: "debian12-apache-symfony7"
+    image: debian12-apache-symfony7:latest #for locally usage
+#    image: ityannred/debian12-apache-symfony7:latest
+    ports:
+      - "8032:80"
+    volumes:
+      - /home/yann/docker/dirmap/sources/music-intelligence-fm:/home/web
+    #restart: always
+# ----------------------------------------------------------------------
+# ----------------------------------------------------------------------
+#  NETWORK & VOLUMES
+# ----------------------------------------------------------------------
+# ----------------------------------------------------------------------
+# networks:
+#   internal:
+#     name: internal
+#     driver: bridge
