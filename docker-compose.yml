@@ -20,11 +20,11 @@ services:
     image: mysql:5.7.41
     volumes:
       - /home/yann/docker/dirmap/mysql57vialtic-data:/var/lib/mysql
-      - /home/yann/docker/dirmap/mysql57vialtic-conf/my.cnf:/etc/mysql/conf.d/my.cnf
+      #- /home/yann/docker/dirmap/mysql57vialtic-conf/my.cnf:/etc/mysql/conf.d/my.cnf
     ports:
       - "3333:3306"
     restart: always
-    #command: -max_allowed_packet=32505856
+    command: --sql_mode= #-max_allowed_packet=32505856
     networks:
       - vialtic
     environment:
