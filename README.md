@@ -11,6 +11,6 @@ Generate a docker image based on Php 8.3.2 and Debian Bookworm
 ```bash
 docker login -u "ityannred" docker.io && \
 docker build -t ityannred/php83 . && \
-docker tag php83:latest ityrannred/php83:latest && \
+docker tag ityrannred/php83:latest ityrannred/php83:latest && \
 docker push ityannred/php83:latest
 ```
