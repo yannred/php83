@@ -32,6 +32,7 @@ RUN  apt clean && apt update && apt install -y \
         unzip \
         libssh2-1 libssh2-1-dev \
         locales \
+        sudo \
         gettext \
         mariadb-client \
         nano \
@@ -70,6 +71,12 @@ COPY "php-conf/001-xdebug.ini" "/usr/local/etc/php/conf.d/"
 
 # Composer 2.2
 COPY --from=composer:2.2 /usr/bin/composer /usr/local/bin/composer
+
+# user 1000
+RUN useradd -u 1000 -m -s /bin/bash user
+RUN usermod -aG sudo user
+RUN usermod -aG www-data user
+RUN echo "user ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # ssl
 #RUN mkdir -p /etc/apache2/ssl/
